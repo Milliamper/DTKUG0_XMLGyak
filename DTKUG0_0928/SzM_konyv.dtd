@@ -1,0 +1,27 @@
+<!DOCTYPE konyvek [
+
+<!ELEMENT konyvek (konyv)*>
+<!ATTLIST konyvek
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT konyv (cim,kiadasi_eve,kiado,szerzo)>
+<!ATTLIST konyv
+  xmlns CDATA #FIXED ''
+  id NMTOKEN #REQUIRED>
+
+<!ELEMENT cim (#PCDATA)>
+<!ATTLIST cim
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT kiadasi_eve (#PCDATA)>
+<!ATTLIST kiadasi_eve
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT kiado (#PCDATA)>
+<!ATTLIST kiado
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT szerzo (#PCDATA)+>
+<!ATTLIST szerzo
+  xmlns CDATA #FIXED ''>
+]>
