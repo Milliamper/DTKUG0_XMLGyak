@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE konyvek [
 <!ELEMENT konyvek (konyv+)>
 <!ELEMENT konyv (cim,kiadasi_eve,kiado,szerzo)>
