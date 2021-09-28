@@ -1,7 +1,10 @@
 
-<!ELEMENT konyvek (konyv)*>
+
+<!DOCTYPE konyvek [
+<!ELEMENT konyvek (konyv+)>
 <!ELEMENT konyv (cim,kiadasi_eve,kiado,szerzo)>
 <!ELEMENT cim (#PCDATA)>
 <!ELEMENT kiadasi_eve (#PCDATA)>
 <!ELEMENT kiado (#PCDATA)>
-<!ELEMENT szerzo (#PCDATA)+>
+<!ELEMENT szerzo (#PCDATA)>
+]>
