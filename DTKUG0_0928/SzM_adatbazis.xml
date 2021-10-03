@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE adatbazis [
+		<!ELEMENT adatbazis (dolgozo)*>
+		<!ELEMENT dolgozo (kod|nev|fizetes)*>
+		<!ELEMENT kod (#PCDATA)>
+		<!ELEMENT nev (#PCDATA)>
+		<!ELEMENT fizetes (#PCDATA)>
+		]>
+<adatbazis>
+	<dolgozo>
+		<kod>id="335"</kod>
+		<nev> name="Kiss Tamas"</nev>
+		<fizetes> salary="250000"</fizetes>
+	</dolgozo>
+	
+	<dolgozo>
+		<kod>id="485"</kod>
+		<nev> name="Nagy Endre"</nev>
+		<fizetes> salary="300000"</fizetes>
+	</dolgozo>
+	
+	<dolgozo>
+		<kod>id="580"</kod>
+		<nev> name="Toth Noemi"</nev>
+		<fizetes> salary="275000"</fizetes>
+	</dolgozo>
+	
+</adatbazis>
