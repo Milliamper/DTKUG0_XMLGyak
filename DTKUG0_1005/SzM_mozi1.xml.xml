@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE mozi [
+		<!ELEMENT mozi (film)*>
+		<!ATTLIST mozi
+				xmlns:xsi CDATA #REQUIRED
+				xsi:noNamespaceSchemaLocation CDATA #REQUIRED>
+		<!ELEMENT film (rendezo|szinesz|iro)*>
+		<!ATTLIST film
+				id CDATA #REQUIRED
+				mufaj CDATA #REQUIRED>
+		<!ELEMENT rendezo (#PCDATA)>
+		<!ATTLIST rendezo
+				id CDATA #REQUIRED
+				nev CDATA #REQUIRED>
+		<!ELEMENT szinesz (#PCDATA)>
+		<!ATTLIST szinesz
+				id CDATA #REQUIRED
+				neve CDATA #REQUIRED>
+		<!ELEMENT iro (#PCDATA)>
+		<!ATTLIST iro
+				id CDATA #REQUIRED>
+		]>
+<mozi
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="mozi.xsd">
+
+	<film id="1" mufaj="horror">
+		<rendezo id="1" nev="alex"/>
+		<rendezo id="2" nev="alex"/>
+		<szinesz id="1" neve="Madison Ivy"/>
+		<iro id="1"/>
+	</film>
+	
+	<film id="2" mufaj="scifi">
+		<rendezo id="3" nev="alex"/>
+		<rendezo id="4" nev="alex"/>
+		<szinesz id="2" neve="Madison Ivy"/>
+		<iro id="2"/>
+	</film>
+	
+</mozi>
