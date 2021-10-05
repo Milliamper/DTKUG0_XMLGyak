@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="orarend">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ora" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="targy"/>
+                            <xs:element type="xs:string" name="idopont"/>
+                            <xs:element type="xs:string" name="helyszin"/>
+                            <xs:element type="xs:string" name="oktato"/>
+                            <xs:element type="xs:string" name="szak"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="id" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
