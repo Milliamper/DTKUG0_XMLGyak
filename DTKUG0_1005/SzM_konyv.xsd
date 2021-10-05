@@ -8,18 +8,17 @@
 	<xs:complexType>
 	
 	
-		<xs:sequuence>
+		<xs:sequence>
 	
-			<xs:element name="konyvek" maxOccurs="unbounded">
+			<xs:element name="konyv" maxOccurs="unbounded">
 		
 				<xs:complexType> <!--könyv elemnek több eleme van, komplex jelölőelem-->
 			
 					<xs:sequence> <!--gyerek elemeknek rögzített sorrendjét jelöli-->
-						<xs:element name="title" type ="xs:string"/>
-						<xs:element name="published" type="xs:unsignedshort"/>
-						<xs:element name="publisher" type="xs:string"/>
-						<xs:element name="author" type="xs:string" maxOccurs="unbounded"/>
-						<xs:element name="abstract" type="xs:string"/>
+						<xs:element name="cim" type ="xs:string"/>
+						<xs:element name="kiadasi_eve" type="xs:unsignedShort"/>
+						<xs:element name="kiado" type="xs:string"/>
+						<xs:element name="szerzo" type="xs:string" maxOccurs="unbounded"/>
 					</xs:sequence>
 				
 				<xs:attribute name="id" type="xs:string" use="required"/>
@@ -28,7 +27,7 @@
 			
 			</xs:element>
 
-		</xs:sequuence>
+		</xs:sequence>
 	
 	</xs:complexType>
 
