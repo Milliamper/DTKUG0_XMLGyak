@@ -4,24 +4,24 @@
 <konyvek>
 
 	<konyv id="a">
-		<cim>Bevezetés a C#-ba</cim>
-        <kiadasi_eve>2008</kiadasi_eve>
+		<cim>Szolgáltatásalapú világ</cim>
+        <kiadasi_eve>2013</kiadasi_eve>
 		<kiado>Libri</kiado>
-		<szerzo>Csató Endre</szerzo>
+		<szerzo>Gottdank Tibor</szerzo>
 	</konyv>
 
     <konyv id="b">
-		<cim>Java alapok</cim>
-        <kiadasi_eve>2015</kiadasi_eve>
-		<kiado>Mozaik</kiado>
-		<szerzo>Tamás Ádám</szerzo>
+		<cim>Intelligens érzékelők az orvosbiológiában</cim>
+        <kiadasi_eve>2013</kiadasi_eve>
+		<kiado>Libri</kiado>
+		<szerzo>Kovács Ferenc</szerzo>
 	</konyv>
 
     <konyv id="c">
-		<cim>Adatbáziskezelés</cim>
-        <kiadasi_eve>2000</kiadasi_eve>
-		<kiado>Álomgyár</kiado>
-		<szerzo>John Wick</szerzo>
+		<cim>Számítógépes eszközök hálózatba kötése - Lépésről lépésre</cim>
+        <kiadasi_eve>2011</kiadasi_eve>
+		<kiado>Libri</kiado>
+		<szerzo>Ciprian Adrian Rusen</szerzo>
 	</konyv>
 
 </konyvek>
