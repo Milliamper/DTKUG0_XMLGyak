@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="konyvek">
+
+
+	<xs:complexType>
+	
+	
+		<xs:sequuence>
+	
+			<xs:element name="konyvek" maxOccurs="unbounded">
+		
+				<xs:complexType> <!--könyv elemnek több eleme van, komplex jelölőelem-->
+			
+					<xs:sequence> <!--gyerek elemeknek rögzített sorrendjét jelöli-->
+						<xs:element name="title" type ="xs:string"/>
+						<xs:element name="published" type="xs:unsignedshort"/>
+						<xs:element name="publisher" type="xs:string"/>
+						<xs:element name="author" type="xs:string" maxOccurs="unbounded"/>
+						<xs:element name="abstract" type="xs:string"/>
+					</xs:sequence>
+				
+				<xs:attribute name="id" type="xs:string" use="required"/>
+				
+				</xs:complexType>
+			
+			</xs:element>
+
+		</xs:sequuence>
+	
+	</xs:complexType>
+
+</xs:element>
+
+</xs:schema>

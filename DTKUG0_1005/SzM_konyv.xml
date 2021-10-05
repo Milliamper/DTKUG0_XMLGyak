@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--DOCTYPE konyvek SYSTEM "SzM_konyv.dtd"-->
+
+<!--<xsi:schemaLocation="http://www.w3schools.com SzM_konyv.xsd"/>-->
+
+
+<konyvek xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SzM_konyv.xsd">
+
+	<konyv id="a">
+		<cim>Szolgáltatásalapú világ</cim>
+        <kiadasi_eve>2013</kiadasi_eve>
+		<kiado>Libri</kiado>
+		<szerzo>Gottdank Tibor</szerzo>
+	</konyv>
+
+    <konyv id="b">
+		<cim>Intelligens érzékelők az orvosbiológiában</cim>
+        <kiadasi_eve>2013</kiadasi_eve>
+		<kiado>Libri</kiado>
+		<szerzo>Kovács Ferenc</szerzo>
+	</konyv>
+
+    <konyv id="c">
+		<cim>Számítógépes eszközök hálózatba kötése - Lépésről lépésre</cim>
+        <kiadasi_eve>2011</kiadasi_eve>
+		<kiado>Libri</kiado>
+		<szerzo>Ciprian Adrian Rusen</szerzo>
+	</konyv>
+
+</konyvek>
