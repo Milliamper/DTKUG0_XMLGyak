@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<adatbazis xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SzM_ertoxsd.xsd">
+  <A a1="10">
+    <B>B</B>
+    <C>C</C>
+  </A>
+  <B b1="20"/>
+  <C c1="30"/>
+  <AC ac1="1" ac2="2"/>
+</adatbazis>
