@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!-- C-B: 1:N kapcsolat-->
+<!-- A-B: N:N kapcsolat-->
+<!-- (A,B,C) egyed -> elem -->
+<!-- (a[aláhúzás] kulcs tulajdonság -> elemjellemző + kulcs megkötés -->
+<!-- b többértékű tulajdonság -> gyerekelem, ismétlődéssel -->
+<!-- c összetett tulajdonság -> elemeket tartalmazó gyerekelem -->
+<!-- elemi tulajdonság -> szöveg elem -->
+
+
+<xs:element name="adatbazis">
+    <xs:complexType>
+        <xs:sequence>
+           
+            <xs:element name="A" maxOccurs="unbounded"> <!-- means A is required and may repeat an unlimited number of times. -->
+                    <xs:complexType mixed="true"> <!-- To enable character data to appear between the child-elements of "adatbazis", the mixed attribute must be set to "true". The <xs:sequence> tag means that the elements defined (B, C) must appear in that order inside a "adatbazis" element.-->
+                        <xs:sequence>
+                            <xs:element name="B" type="xs:string"/>
+                            <xs:element name="C" type="xs:string"/>
+                        </xs:sequence>
+                        <xs:attribute name="a1" type="xs:int"/> <!-- xs:attribute(reference or local definition) — Reference to a global attribute definition or local definition -->
+                    </xs:complexType>
+            </xs:element>
+
+            <xs:element name="B" maxOccurs="unbounded">
+                    <xs:complexType mixed="true">  
+                        <xs:attribute name="b1" type="xs:int"/>
+                    </xs:complexType>
+            </xs:element>
+
+            <xs:element name="C" maxOccurs="unbounded">
+                    <xs:complexType mixed="true">  
+                        <xs:attribute name="c1" type="xs:int"/>
+                    </xs:complexType>
+            </xs:element>
+
+            <xs:element name="AC">
+                    <xs:complexType mixed="true">  
+                        <xs:attribute name="ac1" type="xs:int"/>
+                        <xs:attribute name="ac2" type="xs:int"/>
+                    </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:key name="Key1">
+        <xs:selector xpath="A"/>
+        <xs:field xpath="@c1"/>
+    </xs:key>
+
+    <xs:key name="Key2">
+        <xs:selector xpath="B"/>
+        <xs:field xpath="@b1"/>
+    </xs:key>
+
+</xs:element>
+
+</xs:schema>
+    
