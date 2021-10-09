@@ -23,7 +23,7 @@
 		]>
 <mozi
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="mozi.xsd">
+	xsi:noNamespaceSchemaLocation="SzM_mozi1.xsd">
 
 	<film id="1" mufaj="horror">
 		<rendezo id="1" nev="alex"/>
