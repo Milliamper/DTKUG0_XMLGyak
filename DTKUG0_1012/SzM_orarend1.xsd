@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
     <xs:element name="orarend">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="ora" maxOccurs="unbounded">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="targy" type="targyak_tipus"/>
-                            <xs:element type="xs:string" name="idopont"/>
-                            <xs:element type="xs:string" name="helyszin"/>
-                            <xs:element name="oktato" type="oktatok_tipus"/>
-                            <xs:element name="szak" type="szak_tipus"/>
-                        </xs:sequence>
-                        <xs:attribute type="xs:string" name="id" use="required"/>
-                    </xs:complexType>
-                </xs:element>
+                <xs:element name="ora" type="ora_tipus" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
+    <xs:complexType name="ora_tipus">
+        <xs:sequence>
+            <xs:element name="targy" type="targyak_tipus"/>
+            <xs:element type="xs:string" name="idopont"/>
+            <xs:element type="xs:string" name="helyszin"/>
+            <xs:element name="oktato" type="oktatok_tipus"/>
+            <xs:element name="szak" type="szak_tipus"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="id" use="required"/>
+        <xs:attribute type="ora_tipus_tipus" name="tipus" default="elmelet"/>
+    </xs:complexType>
 
     <xs:simpleType name="targyak_tipus">
         <xs:restriction base="xs:string">
@@ -27,6 +29,7 @@
             <xs:enumeration value="Mesterseges intelligencia"/>
             <xs:enumeration value="Adatkezeles XML-ben"/>
             <xs:enumeration value="Szoftverteszteles"/>
+            <xs:enumeration value="Integralt vallalati rendszerek"/>
         </xs:restriction>
     </xs:simpleType>
 
@@ -41,6 +44,14 @@
             <xs:pattern value="([\w .]+)"/> <!-- Only string allowed with space and dot-->
         </xs:restriction>
     </xs:simpleType>
+
+    <xs:simpleType name="ora_tipus_tipus">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="elmelet|gyakorlat"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
 
 
 </xs:schema>
