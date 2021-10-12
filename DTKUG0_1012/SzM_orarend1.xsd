@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="orarend">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ora" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="targy" type="targyak_tipus"/>
+                            <xs:element type="xs:string" name="idopont"/>
+                            <xs:element type="xs:string" name="helyszin"/>
+                            <xs:element name="oktato" type="oktatok_tipus"/>
+                            <xs:element name="szak" type="szak_tipus"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="id" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="targyak_tipus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Web-es alkalmazasok JAVA"/>
+            <xs:enumeration value="Web technologiak"/>
+            <xs:enumeration value="Mesterseges intelligencia"/>
+            <xs:enumeration value="Adatkezeles XML-ben"/>
+            <xs:enumeration value="Szoftverteszteles"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="szak_tipus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Mernokinformatikus"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="oktatok_tipus">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([\w .]+)"/> <!-- Only string allowed with space and dot-->
+        </xs:restriction>
+    </xs:simpleType>
+
+
+</xs:schema>
