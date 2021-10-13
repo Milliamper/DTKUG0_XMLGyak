@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<nevjegykartyak>
+
+    <nevjegykartya>
+        <nev>Szalai Marton</nev>
+        <ceg>
+            <nev>Miskolci Egyetem</nev>
+            <cim>
+                <iranyitoszam>3515</iranyitoszam>
+                <varos>Miskolc</varos>
+                <utca>Egyetem</utca>
+                <hazszam>18</hazszam>
+            </cim>
+            <telefonszam>+3646565320</telefonszam>
+            <weblap>www.uni-miskolc.hu</weblap>
+        </ceg>
+        <beosztas>Hallgato</beosztas>
+        <telefonszam>+36313412849</telefonszam>
+        <email>szalaimarci99@gmail.com</email>
+    </nevjegykartya>
+
+    <nevjegykartya>
+        <nev>Kiss Fanni</nev>
+        <ceg>
+            <nev>E.ON</nev>
+            <cim>
+                <iranyitoszam>1134</iranyitoszam>
+                <varos>Budapest</varos>
+                <utca>Váci</utca>
+                <hazszam>17</hazszam>
+            </cim>
+            <telefonszam>+36304599600</telefonszam>
+            <weblap>https://www.eon.hu/hu/lakossagi.html</weblap>
+        </ceg>
+        <beosztas>Human Eroforras</beosztas>
+        <telefonszam>+36704475650</telefonszam>
+        <email>kssfnn@gmail.com</email>
+    </nevjegykartya>
+
+</nevjegykartyak>
