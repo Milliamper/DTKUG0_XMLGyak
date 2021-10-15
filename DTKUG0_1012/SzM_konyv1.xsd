@@ -5,7 +5,7 @@
 <xs:element name="konyvek">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="konyv" type="konyv_tipus" maxOccurs="unbounded"/>
+                <xs:element name="konyv" type="konyv_tipus"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -31,7 +31,7 @@
     <xs:complexType name="szereplo_tipus">
         <xs:sequence>
             <xs:element name="nev" type="nev_tipus"/>
-            <xs:element name="baratja" type="baratja_tipus"/>
+            <xs:element name="baratja" type="baratja_tipus" minOccurs="0"/>
             <xs:element name="szuletett" type="szuletett_tipus"/>
             <xs:element name="jellemzes" type="jellemzes_tipus"/>
         </xs:sequence>
@@ -57,13 +57,13 @@
 
     <xs:simpleType name="szuletett_tipus">
         <xs:restriction base="xs:integer">
-          <xs:minInclusive value="1889"/>
+          <xs:minInclusive value="1869"/>
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="jellemzes_tipus">
         <xs:restriction base="xs:string">
-          <xs:maxLength value="30"/>
+          <xs:maxLength value="50"/>
         </xs:restriction>
     </xs:simpleType>
 
