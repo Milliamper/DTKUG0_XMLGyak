@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<orarend>
+<orarend xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SzM_orarend1.xsd">
 	<ora id="a" tipus="elmelet">
 		<targy>Web-es alkalmazasok JAVA</targy>
 		<idopont>Hetfo 10-12</idopont>

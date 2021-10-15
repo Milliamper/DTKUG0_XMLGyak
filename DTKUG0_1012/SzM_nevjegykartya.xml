@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<nevjegykartyak>
+<nevjegykartyak xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SzM_nevjegykartya.xsd">
 
-    <nevjegykartya>
+    <nevjegykartya id="a">
         <nev>Szalai Marton</nev>
         <ceg>
             <nev>Miskolci Egyetem</nev>
@@ -12,29 +12,29 @@
                 <utca>Egyetem</utca>
                 <hazszam>18</hazszam>
             </cim>
-            <telefonszam>31-341-28-49</telefonszam>
-            <weblap>www.uni-miskolc.hu</weblap>
+            <telefonszam>46-318-488</telefonszam>
+            <weblap>https://www.uni-miskolc.hu</weblap>
         </ceg>
         <beosztas>Hallgato</beosztas>
-        <telefonszam>+36313412849</telefonszam>
+        <telefonszam>31-341-28-49</telefonszam>
         <email>szalaimarci99@gmail.com</email>
     </nevjegykartya>
 
-    <nevjegykartya>
+    <nevjegykartya id="b">
         <nev>Kiss Fanni</nev>
         <ceg>
             <nev>E.ON</nev>
             <cim>
                 <iranyitoszam>1134</iranyitoszam>
                 <varos>Budapest</varos>
-                <utca>Váci</utca>
+                <utca>Kossuth</utca>
                 <hazszam>17</hazszam>
             </cim>
             <telefonszam>46-565-300</telefonszam>
             <weblap>https://www.eon.hu/hu/lakossagi.html</weblap>
         </ceg>
         <beosztas>Human Eroforras</beosztas>
-        <telefonszam>+36704475650</telefonszam>
+        <telefonszam>70-447-56-50</telefonszam>
         <email>kssfnn@gmail.com</email>
     </nevjegykartya>
 

@@ -2,10 +2,18 @@
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-<xs:element name="nevjegykartyak">
+	<xs:element name="nevjegykartyak">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="nevjegykartya" type="nevjegykartya_tipus" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	
+	<xs:element name="ceg">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ceg" type="ceg_tipus" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -21,27 +29,71 @@
         <xs:attribute type="xs:string" name="id" use="required"/>
     </xs:complexType>
 
+    <xs:complexType name="ceg_tipus">
+        <xs:sequence>
+            <xs:element name="nev" type="nev_tipus"/>
+            <xs:element name="cim" type="cim_tipus"/>
+            <xs:element name="telefonszam" type="telefonszam_tipus"/>
+            <xs:element name="weblap" type="weblap_tipus"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="cim_tipus">
+        <xs:sequence>
+            <xs:element name="iranyitoszam" type="iranyitoszam_tipus"/>
+            <xs:element name="varos" type="varos_tipus"/>
+            <xs:element name="utca" type="utca_tipus"/>
+            <xs:element name="hazszam" type="hazszam_tipus"/>
+        </xs:sequence>
+    </xs:complexType>
+
     <xs:simpleType name="nev_tipus">
         <xs:restriction base="xs:string">
           <xs:minLength value="3" />
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:simpleType name="ceg_tipus">
+    <xs:simpleType name="iranyitoszam_tipus">
+        <xs:restriction base="xs:integer">
+          <xs:minInclusive value="1000"/>
+          <xs:maxInclusive value="9999"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="hazszam_tipus">
+        <xs:restriction base="xs:integer">
+          <xs:minInclusive value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="varos_tipus">
         <xs:restriction base="xs:string">
-          <xs:minLength value="3" />
+            <xs:pattern value="[a-zA-Z]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="utca_tipus">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="weblap_tipus">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="10" />
         </xs:restriction>
     </xs:simpleType>
 	
 	<xs:simpleType name="telefonszam_tipus">
         <xs:restriction base="xs:string">
-            <xs:pattern value="^(\d{2}-\d{3}-\d{2}-\d{2}|\d{2}-\d{3}-\d{3})$"/>
+            <xs:pattern value="\d{2}-\d{3}-\d{2}-\d{2}"/>
+            <xs:pattern value="\d{2}-\d{3}-\d{3}"/>
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="email_tipus">
         <xs:restriction base="xs:string">
-            <xs:pattern value="([a-zA-Z]+(\d[a-zA-Z]+)+)@[a-z]+\.com"/>
+            <xs:minLength value="10" />
         </xs:restriction>
     </xs:simpleType>
 
