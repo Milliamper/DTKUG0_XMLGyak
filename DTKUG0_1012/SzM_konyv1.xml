@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<konyvek>
+    <konyv isbn="9789631191714">
+        <cim>Pál utcai fiúk</cim>
+        <szerzo>Molnár Ferenc</szerzo>
+        <szereplo>
+            <nev>Nemecsek Ernő</nev>
+            <baratja>Boka János</baratja>
+            <szuletett>1876</szuletett>
+            <jellemzes>Alázatos, udvarias, érzékeny</jellemzes>
+        </szereplo>
+        <szereplo>
+            <nev>Boka János</nev>
+            <szuletett>1876</szuletett>
+            <jellemzes>Magabiztos fellépésű, határozott jellem</jellemzes>
+        </szereplo>
+    </konyv>
+</konyvek>

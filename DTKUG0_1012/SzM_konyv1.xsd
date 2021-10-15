@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="konyvek">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="konyv" type="konyv_tipus" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="konyv">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="szereplo" type="szereplo_tipus" maxOccurs="2"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:complexType name="konyv_tipus">
+        <xs:sequence>
+            <xs:element name="cim" type="nev_tipus"/>
+            <xs:element name="szerzo" type="szerzo_tipus"/>
+            <xs:element name="szereplo" type="szereplo_tipus"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="isbn" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="szereplo_tipus">
+        <xs:sequence>
+            <xs:element name="nev" type="nev_tipus"/>
+            <xs:element name="baratja" type="baratja_tipus"/>
+            <xs:element name="szuletett" type="szuletett_tipus"/>
+            <xs:element name="jellemzes" type="jellemzes_tipus"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="nev_tipus">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="3" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="szerzo_tipus">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="3" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="baratja_tipus">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="3" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="szuletett_tipus">
+        <xs:restriction base="xs:integer">
+          <xs:minInclusive value="1889"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="jellemzes_tipus">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="30"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
