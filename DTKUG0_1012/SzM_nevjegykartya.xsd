@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="nevjegykartyak">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nevjegykartya" type="nevjegykartya_tipus" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="nevjegykartya_tipus">
+        <xs:sequence>
+            <xs:element name="nev" type="nev_tipus"/>
+            <xs:element name="ceg" type="ceg_tipus"/>
+            <xs:element name="beosztas" type="beosztas_tipus"/>
+            <xs:element name="telefonszam" type="telefonszam_tipus"/>
+            <xs:element name="email" type="email_tipus"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="id" use="required"/>
+    </xs:complexType>
+
+    <xs:simpleType name="nev_tipus">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="3" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ceg_tipus">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="3" />
+        </xs:restriction>
+    </xs:simpleType>
+	
+	<xs:simpleType name="telefonszam_tipus">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="^(\d{2}-\d{3}-\d{2}-\d{2}|\d{2}-\d{3}-\d{3})$"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="email_tipus">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([a-zA-Z]+(\d[a-zA-Z]+)+)@[a-z]+\.com"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="beosztas_tipus">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="3" />
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
