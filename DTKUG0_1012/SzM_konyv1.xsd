@@ -23,7 +23,7 @@
         <xs:sequence>
             <xs:element name="cim" type="nev_tipus"/>
             <xs:element name="szerzo" type="szerzo_tipus"/>
-            <xs:element name="szereplo" type="szereplo_tipus"/>
+            <xs:element name="szereplo" type="szereplo_tipus" maxOccurs="2"/>
         </xs:sequence>
         <xs:attribute type="xs:string" name="isbn" use="required"/>
     </xs:complexType>
