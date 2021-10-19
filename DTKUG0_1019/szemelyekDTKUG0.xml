@@ -4,7 +4,7 @@
 Gyerekeleme: szemely, amely azonosítva van.
 szemely id (nev (saját név), kor varos) – ebből legalább 3 id blokk legyen.-->
 
-<szemelyek xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="">
+<szemelyek xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="szemelyekDTKUG0.xsd">
     <szemely id="a">
         <nev>Szalai Márton</nev>
         <kor>18</kor>
