@@ -22,7 +22,7 @@ public class XsdValidation {
 	
 	public static void main(String[] args) {
 
-		File schemaFile = new File(XSDPATH_PC); // etc.
+		File schemaFile = new File(XSDPATH_PC);
 		Source xmlFile = new StreamSource(new File(XMLPATH_PC));
 		SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 		try {
