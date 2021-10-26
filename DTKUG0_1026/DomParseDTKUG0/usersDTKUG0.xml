@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="usersDTKUG0.xsd">
+    <user id="1">
+        <firstname>Márton</firstname>
+        <lastname>Szalai</lastname>
+        <profession>Computer Science Engineer</profession>
+        </user>
+    <user id="2">
+        <firstname>Petra</firstname>
+        <lastname>Sebák</lastname>
+        <profession>Developer</profession>
+    </user>
+    <user id="3">
+        <firstname>Fanni</firstname>
+        <lastname>Kiss</lastname>
+        <profession>Accountant</profession>
+    </user>
+</users>
