@@ -17,12 +17,12 @@ public class DomReadDTKUG0 {
 	public static void main(String[] args) {
 
 		try {
-			File xmlFile = new File("usersDTKUG0.xml");
-			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-
+			File xmlFile = new File("usersDTKUG0.xml"); // XML fájl bekérése
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance(); // Objektumfák elõállítása XML dokumentumból
 			DocumentBuilder dBuilder = factory.newDocumentBuilder();
-			Document doc = dBuilder.parse(xmlFile);
-			doc.getDocumentElement().normalize();
+			
+			Document doc = dBuilder.parse(xmlFile); // XML dokumentum átadása és egy DOM Document objektum létrehozása
+			doc.getDocumentElement().normalize(); //szomszédos és üres text node-ok eltávolítására szolgál
 			Read(doc);
 		} catch (ParserConfigurationException pce) {
 			pce.printStackTrace();
@@ -35,12 +35,13 @@ public class DomReadDTKUG0 {
 
 	public static void Read(Document doc) {
 
-		NodeList nList = doc.getElementsByTagName("user");
+		NodeList nList = doc.getElementsByTagName("user"); // user tag-el rendelkezõ elemek lekérése
 
 		for (int i = 0; i < nList.getLength(); i++) {
-			Node node = nList.item(i);
-			Element element = (Element) node;
+			Node node = nList.item(i); // lista aktuális elemeinek lekérése
+			Element element = (Element) node; // konvertálás elementekké
 
+			// attribútumok lekérése majd a definált metódusok meghívása
 			if (node.getNodeType() == Node.ELEMENT_NODE) {
 				String id = element.getAttribute("id");
 				String firstname = element.getElementsByTagName("firstname").item(0).getTextContent();
