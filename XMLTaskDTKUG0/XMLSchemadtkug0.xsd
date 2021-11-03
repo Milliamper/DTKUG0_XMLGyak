@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="auto_nt_service">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice maxOccurs="unbounded">
+                    <xs:element name="cegjegyzek" type="cegjegyzek_type"/>
+                    <xs:element name="ceg" type="ceg_type"/>
+                    <xs:element name="muhely" type="muhely_type"/>
+                    <xs:element name="raktar" type="raktar_type"/>
+                    <xs:element name="auto" type="auto_type"/>
+                    <xs:element name="tulajdonos" type="tulajdonos_type"/>
+                    <xs:element name="futar" type="futar_type"/>
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:key name="cegjegyzekid_primaryKey">
+            <xs:selector xpath="cegjegyzek"/>
+            <xs:field xpath="@cegjegyzekid"/>
+        </xs:key>
+        <xs:keyref name="cegid_foreignKey" refer="cegid_primaryKey">
+            <xs:selector xpath="cegjegyzek"/>
+            <xs:field xpath="@cegid"/>
+        </xs:keyref>
+        <xs:key name="cegid_primaryKey">
+            <xs:selector xpath="ceg"/>
+            <xs:field xpath="@cegid"/>
+        </xs:key>
+        <xs:key name="mid_primaryKey">
+            <xs:selector xpath="muhely"/>
+            <xs:field xpath="@mid"></xs:field>
+        </xs:key>
+        <xs:keyref name="cegid2_foreignKey" refer="cegid_primaryKey">
+            <xs:selector xpath="muhely"/>
+            <xs:field xpath="@cegid"/>
+        </xs:keyref>
+        <xs:key name="cikkszam_primaryKey">
+            <xs:selector xpath="raktar"/>
+            <xs:field xpath="@cikkszam"/>
+        </xs:key>
+        <xs:key name="alvazszam_primaryKey">
+            <xs:selector xpath="auto"/>
+            <xs:field xpath="@alvazszam"/>
+        </xs:key>
+        <xs:keyref name="ugyfelid_foreignKey" refer="ugyfelid_primaryKey">
+            <xs:selector xpath="auto"/>
+            <xs:field xpath="@ugyfelid"/>
+        </xs:keyref>
+        <xs:key name="ugyfelid_primaryKey">
+            <xs:selector xpath="tulajdonos"/>
+            <xs:field xpath="@ugyfelid"/>
+        </xs:key>
+        <xs:keyref name="mid_foreignKey" refer="mid_primaryKey">
+            <xs:selector xpath="futar"/>
+            <xs:field xpath="@mid"/>
+        </xs:keyref>
+        <xs:keyref name="cikkszam_foreignKey" refer="cikkszam_primaryKey">
+            <xs:selector xpath="futar"/>
+            <xs:field xpath="@cikkszam"/>
+        </xs:keyref>
+
+        
+
+    </xs:element>
+
+
+
+</xs:schema>
