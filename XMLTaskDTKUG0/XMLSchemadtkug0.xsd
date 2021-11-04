@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
     <xs:element name="auto_nt_service">
         <xs:complexType>
             <xs:sequence>
@@ -60,11 +61,96 @@
             <xs:selector xpath="futar"/>
             <xs:field xpath="@cikkszam"/>
         </xs:keyref>
-
-        
-
     </xs:element>
+    
+    <xs:complexType name="cegjegyzek_type">
+        <xs:sequence>
+            <xs:element name="bejegyzett_cegek" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="cegid" type="xs:string" use="required"/>
+        <xs:attribute name="cegjegyzekid" type="xs:string" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="ceg_type">
+        <xs:sequence>
+            <xs:element name="nev" type="xs:string"/>
+            <xs:element name="szekhely" type="szekhely_type"/>
+        </xs:sequence>
+        <xs:attribute name="cegid" type="xs:string" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="muhely_type">
+        <xs:sequence>
+            <xs:element name="javitando_auto" type="javitando_auto_type"/>
+        </xs:sequence>
+        <xs:attribute name="cegid" type="xs:string" use="required"/>
+        <xs:attribute name="mid" type="xs:string" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="raktar_type">
+        <xs:sequence>
+            <xs:element name="alkatreszek" type="alkatreszek_type"/>
+        </xs:sequence>
+        <xs:attribute name="cikkszam" type="xs:string" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="auto_type">
+        <xs:sequence>
+            <xs:element name="marka" type="xs:string"/>
+            <xs:element name="tipus" type="xs:string"/>
+            <xs:element name="km_ora_allasa" type="km_ora_allasa_type"/>
+        </xs:sequence>
+        <xs:attribute name="ugyfelid" type="xs:string" use="required"/>
+        <xs:attribute name="alvazszam" type="xs:string" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="tulajdonos_type">
+        <xs:sequence>
+            <xs:element name="nev" type="xs:string"/>
+            <xs:element name="cim" type="xs:string"/>
+            <xs:element name="szulido" type="szulido_type"/>
+        </xs:sequence>
+        <xs:attribute name="ugyfelid" type="xs:string" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="futar_type">
+        <xs:sequence>
+            <xs:element name="varhato_erk" type="varhato_erk_type"/>
+        </xs:sequence>
+        <xs:attribute name="mid" type="xs:string" use="required"/>
+        <xs:attribute name="cikkszam" type="xs:string" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="szekhely_type">
+        <xs:sequence>
+            <xs:element name="cim" type="xs:string"/>
+            <xs:element name="telefonszam" type="telefonszam_type"/>
+        </xs:sequence>
+    </xs:complexType>
 
-
+    <xs:simpleType name="javitando_auto_type">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z]+\s[a-zA-Z]+"/> <!-- "string string" -->
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="alkatreszek_type">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="3" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="km_ora_allasa_type">
+        <xs:restriction base="xs:integer">
+          <xs:minInclusive value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="szulido_type">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{4}\.(0[1-9]|1[012])\.(0[1-9]|[12][0-9]|3[01])"/> <!-- YYYY.MM.DD -->
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="varhato_erk_type">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]"/> <!-- HH.MM -->
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="telefonszam_type">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{2}-\d{3}-\d{2}-\d{2}"/>
+            <xs:pattern value="\d{2}-\d{3}-\d{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
 
 </xs:schema>
