@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<auto_nt_service xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<auto_nt_service xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XMLSchemadtkug0.xsd">
     
     <cegjegyzek cegid="a" cegjegyzekid="aa">
         <bejegyzett_cegek>Stop'n go</bejegyzett_cegek>
