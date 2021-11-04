@@ -38,10 +38,10 @@
         <javitando_auto>Honda Jazz</javitando_auto>
     </muhely>
     <muhely cegid="b" mid="m2">
-        <javitando_auto>Mazda 3</javitando_auto>
+        <javitando_auto>Fiat Tipo</javitando_auto>
     </muhely>
     <muhely cegid="c" mid="m3">
-        <javitando_auto>Hyundai i20</javitando_auto>
+        <javitando_auto>Bentley Continental</javitando_auto>
     </muhely>
 
     <raktar cikkszam="qwert12">
@@ -87,7 +87,7 @@
     </tulajdonos>
 
     <futar mid="m1" cikkszam="qwert12">
-        <varhato_erk>15:00</varhato_erk>
+        <varhato_erk>15:15</varhato_erk>
     </futar>
     <futar mid="m2" cikkszam="xfgje55">
         <varhato_erk>10:00</varhato_erk>
