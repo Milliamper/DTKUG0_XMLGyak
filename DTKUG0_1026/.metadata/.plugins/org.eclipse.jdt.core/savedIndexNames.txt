@@ -1,3 +1,4 @@
 INDEX VERSION 1.131+D:\Dokumentumok\Miskolci Egyetem\2021-22-1\Adatkezelés XML-ben\DTKUG0_XMLGyak\DTKUG0_1026\.metadata\.plugins\org.eclipse.jdt.core
-1586627366.index
+2961324381.index
 1865797976.index
+1586627366.index
