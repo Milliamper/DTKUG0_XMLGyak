@@ -34,7 +34,7 @@ public class xPathDTKUG0 {
 			XPath xPath = XPathFactory.newInstance().newXPath();
 
 			// meg kell adni az elérési út kifejezést és a csomópont listát
-			
+
 			/* 1) */ String expression = "/class/student";
 			/* 2) */ String expression2 = "//student[@id = '1']";
 			/* 3) */ String expression3 = "//student";
@@ -46,9 +46,9 @@ public class xPathDTKUG0 {
 			/* 9) */ String expression9 = "/class/student/@*";
 			/* 10) */ String expression10 = "/*/*";
 			/* 11) */ String expression11 = "/class/student[kor>20]";
-			
+			/* 12) */ String expression12 = "//student/vezeteknev | //student/keresztnev";
 
-			NodeList nodeList = (NodeList) xPath.compile(expression9).evaluate(doc, XPathConstants.NODESET);
+			NodeList nodeList = (NodeList) xPath.compile(expression12).evaluate(doc, XPathConstants.NODESET);
 
 			for (int i = 0; i < nodeList.getLength(); i++) {
 				Node nNode = nodeList.item(i);
