@@ -13,20 +13,28 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class DOMReadDtkug0 {
+public class DOMReadDTKUG0 {
 
 	public static void main(String[] args) {
 
 		try {
-			File xmlFile = new File("XMLdtkug0.xml"); // XML fájl bekérése
-			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance(); // Objektumfák elõállítása XML
-																					// dokumentumból
+			
+			// XML fajl bekerese
+			File xmlFile = new File("XMLdtkug0.xml");
+			
+			// Objektumfak eloallitasa a dokumentumbol
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance(); 
 			DocumentBuilder dBuilder = factory.newDocumentBuilder();
 
-			Document doc = dBuilder.parse(xmlFile); // XML dokumentum átadása és egy DOM Document objektum létrehozása
-			doc.getDocumentElement().normalize(); // szomszédos és üres text node-ok eltávolítására szolgál
+			// XML dokumentum atadasa es egy DOM Document objektum letrehozasa
+			Document doc = dBuilder.parse(xmlFile); 
+			
+			// szomszedos es ures text node-ok eltavolitasara szolgal
+			doc.getDocumentElement().normalize();
+			
 			Read(doc);
-
+			ReadCegjegyzek(doc);
+			ReadAuto(doc);
 		} catch (ParserConfigurationException pce) {
 			pce.printStackTrace();
 		} catch (IOException ioe) {
@@ -36,184 +44,260 @@ public class DOMReadDtkug0 {
 		}
 	}
 
-	public static void Read(Document doc) {
+	public static void ReadCegjegyzek(Document doc) {
 
-		NodeList nList = doc.getElementsByTagName("cegjegyzek"); // cegjegyzek tag-el rendelkezõ elemek lekérése
+		// cegjegyzek tag-el rendelkezo elemek lekerese
+		NodeList nList = doc.getElementsByTagName("cegjegyzek"); 
 
 		for (int i = 0; i < nList.getLength(); i++) {
-			Node node = nList.item(i); // lista aktuális elemeinek lekérése
-			Element element = (Element) node; // konvertálás elementekké
-
-			// attribútumok lekérése majd a definált metódusok meghívása
+			Node node = nList.item(i); // lista aktualis elemeinek lekerese
+			Element element = (Element) node; // konvertalas elementekke
+			// attributomok lekÃ©rÃ©se majd a definiÃ¡lt metÃ³dusok meghÃ­vÃ¡sa
 			if (node.getNodeType() == Node.ELEMENT_NODE) {
 				String cegid = element.getAttribute("cegid");
 				String cegjegyzekid = element.getAttribute("cegjegyzekid");
-				String ugyfelid = element.getAttribute("ugyfelid");
-				
+
 				String bejegyzettCegek = element.getElementsByTagName("bejegyzett_cegek").item(0).getTextContent();
 
 				System.out.println("\nRoot Element :" + doc.getDocumentElement().getNodeName());
 				System.out.println("------");
 				System.out.println("Current Element :" + node.getNodeName());
-				System.out.println("Cég azonosító : " + cegid);
-				System.out.println("Cégjegyzék ID : " + cegjegyzekid);
-				System.out.println("Bejegyzett cégek - " + (i + 1) + ".cég: " + bejegyzettCegek);
-				
-				ReadCegById(doc, cegid);
-				ReadAutoById(doc, ugyfelid);
+				System.out.println("Ceg azonosito : " + cegid);
+				System.out.println("Cegjegyzek ID : " + cegjegyzekid);
+				System.out.println("Bejegyzett cegek - " + (i + 1) + ".ceg: " + bejegyzettCegek);
+
 			}
 		}
 	}
-	
+
 	public static void ReadCegById(Document doc, String id) {
-		NodeList nList = doc.getElementsByTagName("ceg"); // ceg tag-el rendelkezõ elemek lekérése
+		// ceg tag-el rendelkezo elemek lekerese
+		NodeList nList = doc.getElementsByTagName("ceg");
+		
 		for (int i = 0; i < nList.getLength(); i++) {
-			Node node = nList.item(i); // lista aktuális elemeinek lekérése
-			Element element = (Element) node; // konvertálás elementekké
-			
+			Node node = nList.item(i); // lista aktualis elemeinek lekerese
+			Element element = (Element) node; // konvertalas elementekke
+
 			if (node.getNodeType() == Node.ELEMENT_NODE) {
-				if(element.getAttribute("cegid").equals(id)) {
+				if (element.getAttribute("cegid").equals(id)) {
 					String cegid = element.getAttribute("cegid");
 					String nev = element.getElementsByTagName("nev").item(0).getTextContent();
 					String cim = element.getElementsByTagName("cim").item(0).getTextContent();
 					String tel = element.getElementsByTagName("telefonszam").item(0).getTextContent();
-					
+
 					System.out.println("\nRoot Element :" + doc.getDocumentElement().getNodeName());
 					System.out.println("------");
 					System.out.println("Current Element :" + node.getNodeName());
-					System.out.println("Cég azonosító : " + cegid);
-					System.out.println("Cégnév : " + nev);
-					System.out.println("Székhely : " + cim +"\nTelefonszám: " + tel);
-					
-					ReadMuhelyById(doc, cegid);
-					
-				}
-			}
-		}
-	}
-	
-	public static void ReadMuhelyById(Document doc, String id) {
-		NodeList nList = doc.getElementsByTagName("muhely"); // muhely tag-el rendelkezõ elemek lekérése
-		for (int i = 0; i < nList.getLength(); i++) {
-			Node node = nList.item(i); // lista aktuális elemeinek lekérése
-			Element element = (Element) node; // konvertálás elementekké
-			
-			if (node.getNodeType() == Node.ELEMENT_NODE) {
-				if(element.getAttribute("cegid").equals(id)) {
-					String cegid = element.getAttribute("cegid");
-					String mid = element.getAttribute("mid");
-					String javitandoAuto = element.getElementsByTagName("javitando_auto").item(0).getTextContent();
-					
-					System.out.println("\nRoot Element :" + doc.getDocumentElement().getNodeName());
-					System.out.println("------");
-					System.out.println("Current Element :" + node.getNodeName());
-					System.out.println("Cég azonosító : " + cegid);
-					System.out.println("MûhelyID : " + mid);
-					System.out.println("Javítandó autó : " + javitandoAuto);
-					
-				}
-			}
-		}
-	}
-	
-	public static void ReadRaktarById(Document doc, String id) {
-		NodeList nList = doc.getElementsByTagName("raktar"); // muhely tag-el rendelkezõ elemek lekérése
-		for (int i = 0; i < nList.getLength(); i++) {
-			Node node = nList.item(i); // lista aktuális elemeinek lekérése
-			Element element = (Element) node; // konvertálás elementekké
-			
-			if (node.getNodeType() == Node.ELEMENT_NODE) {
-				if(element.getAttribute("raktar").equals(id)) {
-					String cikkszam = element.getAttribute("cikkszam");
-					String alkatreszek = element.getElementsByTagName("alkatreszek").item(0).getTextContent();
-					
-					System.out.println("\nRoot Element :" + doc.getDocumentElement().getNodeName());
-					System.out.println("------");
-					System.out.println("Current Element :" + node.getNodeName());
-					System.out.println("Cikkszám : " + cikkszam);
-					System.out.println("Alkatrész : " + alkatreszek);
-					
-				}
-			}
-		}
-	}
-	
-	public static void ReadAutoById(Document doc, String id) {
-		NodeList nList = doc.getElementsByTagName("auto"); // muhely tag-el rendelkezõ elemek lekérése
-		for (int i = 0; i < nList.getLength(); i++) {
-			Node node = nList.item(i); // lista aktuális elemeinek lekérése
-			Element element = (Element) node; // konvertálás elementekké
-			
-			if (node.getNodeType() == Node.ELEMENT_NODE) {
-				if(element.getAttribute("auto").equals(id)) {
-					String ugyfelid = element.getAttribute("ugyfelid");
-					String alvazszam = element.getAttribute("alvazszam");
-					String marka = element.getElementsByTagName("marka").item(0).getTextContent();
-					String tipus = element.getElementsByTagName("tipus").item(0).getTextContent();
-					String km = element.getElementsByTagName("km_ora_allasa").item(0).getTextContent();
-					
-					System.out.println("\nRoot Element :" + doc.getDocumentElement().getNodeName());
-					System.out.println("------");
-					System.out.println("Current Element :" + node.getNodeName());
-					System.out.println("ÜgyfélID : " + ugyfelid);
-					System.out.println("Alvázszám : " + alvazszam);
-					System.out.println("Márka : " + marka);
-					System.out.println("Típus : " + tipus);
-					System.out.println("Km óra állása : " + km);
-					
-				}
-			}
-		}
-	}
-	
-	public static void ReadTulajdonosById(Document doc, String id) {
-		NodeList nList = doc.getElementsByTagName("tulajdonos"); // muhely tag-el rendelkezõ elemek lekérése
-		for (int i = 0; i < nList.getLength(); i++) {
-			Node node = nList.item(i); // lista aktuális elemeinek lekérése
-			Element element = (Element) node; // konvertálás elementekké
-			
-			if (node.getNodeType() == Node.ELEMENT_NODE) {
-				if(element.getAttribute("tulajdonos").equals(id)) {
-					String ugyfelid = element.getAttribute("ugyfelid");
-					String nev = element.getElementsByTagName("nev").item(0).getTextContent();
-					String cim = element.getElementsByTagName("cim").item(0).getTextContent();
-					String szulido = element.getElementsByTagName("szulido").item(0).getTextContent();
-					
-					System.out.println("\nRoot Element :" + doc.getDocumentElement().getNodeName());
-					System.out.println("------");
-					System.out.println("Current Element :" + node.getNodeName());
-					System.out.println("ÜgyfélID : " + ugyfelid);
-					System.out.println("Név : " + nev);
-					System.out.println("Cím : " + cim);
-					System.out.println("Születési idõ : " + szulido);
-					
-				}
-			}
-		}
-	}
-	
-	public static void ReadFutarById(Document doc, String id) {
-		NodeList nList = doc.getElementsByTagName("futar"); // muhely tag-el rendelkezõ elemek lekérése
-		for (int i = 0; i < nList.getLength(); i++) {
-			Node node = nList.item(i); // lista aktuális elemeinek lekérése
-			Element element = (Element) node; // konvertálás elementekké
-			
-			if (node.getNodeType() == Node.ELEMENT_NODE) {
-				if(element.getAttribute("futar").equals(id)) {
-					String mid = element.getAttribute("mid");
-					String cikkszam = element.getAttribute("cikkszam");
-					String varhatoErkezes = element.getElementsByTagName("varhato_erk").item(0).getTextContent();
-					
-					System.out.println("\nRoot Element :" + doc.getDocumentElement().getNodeName());
-					System.out.println("------");
-					System.out.println("Current Element :" + node.getNodeName());
-					System.out.println("Cikkszám : " + cikkszam);
-					System.out.println("MûhelyID : " + mid);
-					System.out.println("MûhelyID : " + varhatoErkezes);
-					
+					System.out.println("Ceg azonosito : " + cegid);
+					System.out.println("Cegnev : " + nev);
+					System.out.println("Szekhely : " + cim + "\nTelefonszam: " + tel);
+
 				}
 			}
 		}
 	}
 
+	public static void ReadMuhelyById(Document doc, String id) {
+		
+		// muhely tag-el rendelkezo elemek lekerese
+		NodeList nList = doc.getElementsByTagName("muhely");
+		
+		for (int i = 0; i < nList.getLength(); i++) {
+			Node node = nList.item(i); // lista aktualis elemeinek lekerese
+			Element element = (Element) node; // konvertalas elementekke
+
+			if (node.getNodeType() == Node.ELEMENT_NODE) {
+				if (element.getAttribute("cegid").equals(id)) {
+					String cegid = element.getAttribute("cegid");
+					String mid = element.getAttribute("mid");
+					String javitandoAuto = element.getElementsByTagName("javitando_auto").item(0).getTextContent();
+
+					System.out.println("\nRoot Element :" + doc.getDocumentElement().getNodeName());
+					System.out.println("------");
+					System.out.println("Current Element :" + node.getNodeName());
+					System.out.println("Ceg azonosito : " + cegid);
+					System.out.println("MuhelyID : " + mid);
+					System.out.println("Javitando auto : " + javitandoAuto);
+
+					ReadCegById(doc, cegid);
+
+				}
+			}
+		}
+	}
+
+	public static void ReadMuhelyByIdWithoutCeg(Document doc, String id) {
+		
+		// muhely tag-el rendelkezo elemek lekerese, a ceg olvasasa nelkul
+		NodeList nList = doc.getElementsByTagName("muhely");
+		
+		for (int i = 0; i < nList.getLength(); i++) {
+			Node node = nList.item(i); // lista aktualis elemeinek lekerese
+			Element element = (Element) node; // konvertalas elementekke
+
+			if (node.getNodeType() == Node.ELEMENT_NODE) {
+				if (element.getAttribute("cegid").equals(id)) {
+					String cegid = element.getAttribute("cegid");
+					String mid = element.getAttribute("mid");
+					String javitandoAuto = element.getElementsByTagName("javitando_auto").item(0).getTextContent();
+
+					System.out.println("\nRoot Element :" + doc.getDocumentElement().getNodeName());
+					System.out.println("------");
+					System.out.println("Current Element :" + node.getNodeName());
+					System.out.println("Ceg azonosito : " + cegid);
+					System.out.println("MuhelyID : " + mid);
+					System.out.println("Javitando auto : " + javitandoAuto);
+
+				}
+			}
+		}
+	}
+
+	public static void ReadRaktarById(Document doc, String id) {
+		
+		// raktar tag-el rendelkezo elemek lekerese
+		NodeList nList = doc.getElementsByTagName("raktar");
+		
+		for (int i = 0; i < nList.getLength(); i++) {
+			Node node = nList.item(i); // lista aktualis elemeinek lekerese
+			Element element = (Element) node; //konvertalas elementekke
+
+			if (node.getNodeType() == Node.ELEMENT_NODE) {
+				if (element.getAttribute("cikkszam").equals(id)) {
+					String cikkszam = element.getAttribute("cikkszam");
+					String alkatreszek = element.getElementsByTagName("alkatreszek").item(0).getTextContent();
+
+					System.out.println("\nRoot Element :" + doc.getDocumentElement().getNodeName());
+					System.out.println("------");
+					System.out.println("Current Element :" + node.getNodeName());
+					System.out.println("Cikkszam : " + cikkszam);
+					System.out.println("Alkatresz : " + alkatreszek);
+
+				}
+			}
+		}
+	}
+
+	public static void ReadAuto(Document doc) {
+		
+		// auto tag-el rendelkezo elemek lekerese
+		NodeList nList = doc.getElementsByTagName("auto");
+		
+		for (int i = 0; i < nList.getLength(); i++) {
+			Node node = nList.item(i); // lista aktualis elemeinek lekerese
+			Element element = (Element) node; // konvertalas elementekke
+
+			if (node.getNodeType() == Node.ELEMENT_NODE) {
+
+				String ugyfelid = element.getAttribute("ugyfelid");
+				String alvazszam = element.getAttribute("alvazszam");
+				String marka = element.getElementsByTagName("marka").item(0).getTextContent();
+				String tipus = element.getElementsByTagName("tipus").item(0).getTextContent();
+				String km = element.getElementsByTagName("km_ora_allasa").item(0).getTextContent();
+
+				System.out.println("\nRoot Element :" + doc.getDocumentElement().getNodeName());
+				System.out.println("------");
+				System.out.println("Current Element :" + node.getNodeName());
+				System.out.println("UgyfelID : " + ugyfelid);
+				System.out.println("Alvazszam : " + alvazszam);
+				System.out.println("Marka : " + marka);
+				System.out.println("Tipus : " + tipus);
+				System.out.println("Km ora allasa : " + km);
+
+				ReadTulajdonosById(doc, ugyfelid);
+
+			}
+		}
+	}
+
+	public static void ReadAutoWithoutTulajdonos(Document doc) {
+		
+		// auto tag-el rendelkezo elemek lekerese, tulajdonos nelkul
+		NodeList nList = doc.getElementsByTagName("auto"); 
+		
+		for (int i = 0; i < nList.getLength(); i++) {
+			Node node = nList.item(i); // lista aktualis elemeinek lekerese
+			Element element = (Element) node; // konvertalas elementekke
+
+			if (node.getNodeType() == Node.ELEMENT_NODE) {
+
+				String ugyfelid = element.getAttribute("ugyfelid");
+				String alvazszam = element.getAttribute("alvazszam");
+				String marka = element.getElementsByTagName("marka").item(0).getTextContent();
+				String tipus = element.getElementsByTagName("tipus").item(0).getTextContent();
+				String km = element.getElementsByTagName("km_ora_allasa").item(0).getTextContent();
+
+				System.out.println(i + 1 + ". autï¿½ : ");
+				System.out.println("\nRoot Element :" + doc.getDocumentElement().getNodeName());
+				System.out.println("------");
+				System.out.println("Current Element :" + node.getNodeName());
+				System.out.println("UgyfelID : " + ugyfelid);
+				System.out.println("Alvazszam : " + alvazszam);
+				System.out.println("Marka : " + marka);
+				System.out.println("Tipus : " + tipus);
+				System.out.println("Km ora allasa : " + km);
+			}
+		}
+
+	}
+
+	public static void ReadTulajdonosById(Document doc, String id) {
+		
+		// tulajdonos tag-el rendelkezo elemek lekerese
+		NodeList nList = doc.getElementsByTagName("tulajdonos"); 
+		
+		for (int i = 0; i < nList.getLength(); i++) {
+			Node node = nList.item(i); // lista aktualis elemeinek lekerese
+			Element element = (Element) node; // konvertalas elementekke
+
+			if (node.getNodeType() == Node.ELEMENT_NODE) {
+				if (element.getAttribute("ugyfelid").equals(id)) {
+					String ugyfelid = element.getAttribute("ugyfelid");
+					String nev = element.getElementsByTagName("nev").item(0).getTextContent();
+					String cim = element.getElementsByTagName("cim").item(0).getTextContent();
+					String szulido = element.getElementsByTagName("szulido").item(0).getTextContent();
+
+					System.out.println("\nRoot Element :" + doc.getDocumentElement().getNodeName());
+					System.out.println("------");
+					System.out.println("Current Element :" + node.getNodeName());
+					System.out.println("UgyfelID : " + ugyfelid);
+					System.out.println("Nev : " + nev);
+					System.out.println("Cim : " + cim);
+					System.out.println("Szuletesi ido : " + szulido);
+
+				}
+			}
+		}
+	}
+
+	public static void Read(Document doc) {
+		
+		// futar tag-el rendelkezo elemek lekerese
+		NodeList nList = doc.getElementsByTagName("futar");
+		
+		for (int i = 0; i < nList.getLength(); i++) {
+			Node node = nList.item(i); // lista aktualis elemeinek lekerese
+			Element element = (Element) node; // konvertalas elementekke
+
+			if (node.getNodeType() == Node.ELEMENT_NODE) {
+
+				String mid = element.getAttribute("mid");
+				String cikkszam = element.getAttribute("cikkszam");
+				String varhatoErkezes = element.getElementsByTagName("varhato_erk").item(0).getTextContent();
+
+				System.out.println("\nRoot Element :" + doc.getDocumentElement().getNodeName());
+				System.out.println("------");
+				System.out.println("Current Element :" + node.getNodeName());
+				System.out.println("Cikkszam : " + cikkszam);
+				System.out.println("MuhelyID : " + mid);
+				System.out.println("Varhato erkezes : " + varhatoErkezes);
+
+				ReadRaktarById(doc, cikkszam);
+				ReadMuhelyById(doc, mid);
+
+			}
+		}
+	}
+
 }
+

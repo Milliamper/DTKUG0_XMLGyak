@@ -1,32 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<auto_nt_service xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XMLSchemadtkug0.xsd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?><auto_nt_service xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XMLSchemadtkug0.xsd">
     
-    <cegjegyzek cegid="a" cegjegyzekid="aa">
+    <cegjegyzek cegid="1" cegjegyzekid="1">
         <bejegyzett_cegek>Stop'n go</bejegyzett_cegek>
     </cegjegyzek>
-    <cegjegyzek cegid="b" cegjegyzekid="bb">
-        <bejegyzett_cegek>Stop'n go</bejegyzett_cegek>
+    <cegjegyzek cegid="2" cegjegyzekid="2">
+        <bejegyzett_cegek>Nonstop service</bejegyzett_cegek>
     </cegjegyzek>
-    <cegjegyzek cegid="c" cegjegyzekid="cc">
-        <bejegyzett_cegek>Stop'n go</bejegyzett_cegek>
+    <cegjegyzek cegid="3" cegjegyzekid="3">
+        <bejegyzett_cegek>Bosch Car Service</bejegyzett_cegek>
     </cegjegyzek>
 
-    <ceg cegid="a">
+    <ceg cegid="1">
         <nev>Stop'n go</nev>
         <szekhely>
             <cim>Miskolc, Soltész Nagy Kálmán utca 36.</cim>
             <telefonszam>46-343-565</telefonszam>
         </szekhely>
     </ceg>
-    <ceg cegid="b">
+    <ceg cegid="2">
         <nev>Nonstop service</nev>
         <szekhely>
             <cim>Miskolc, Fonoda utca 36.</cim>
             <telefonszam>46-123-414</telefonszam>
         </szekhely>
     </ceg>
-    <ceg cegid="c">
+    <ceg cegid="3">
         <nev>Bosch Car Service</nev>
         <szekhely>
             <cim>Karcag, Tőkés utca 25.</cim>
@@ -34,65 +32,65 @@
         </szekhely>
     </ceg>
 
-    <muhely cegid="a" mid="m1">
-        <javitando_auto>Honda Jazz</javitando_auto>
+    <muhely cegid="1" mid="1">
+        <javitando_auto>Fiat Multipla</javitando_auto>
     </muhely>
-    <muhely cegid="b" mid="m2">
-        <javitando_auto>Fiat Tipo</javitando_auto>
+    <muhely cegid="2" mid="2">
+        <javitando_auto>Kia Ceed</javitando_auto>
     </muhely>
-    <muhely cegid="c" mid="m3">
-        <javitando_auto>Bentley Continental</javitando_auto>
+    <muhely cegid="3" mid="3">
+        <javitando_auto>Honda Civic</javitando_auto>
     </muhely>
 
-    <raktar cikkszam="qwert12">
-        <alkatreszek>Injektor</alkatreszek>
-    </raktar>
-    <raktar cikkszam="xfgje55">
-        <alkatreszek>ECU</alkatreszek>
-    </raktar>
-    <raktar cikkszam="lobdy87">
+    <raktar cikkszam="1">
         <alkatreszek>MAP sensor</alkatreszek>
     </raktar>
+    <raktar cikkszam="2">
+        <alkatreszek>ECU</alkatreszek>
+    </raktar>
+    <raktar cikkszam="3">
+        <alkatreszek>Termosztat</alkatreszek>
+    </raktar>
 
-    <auto ugyfelid="a1" alvazszam="JH4KA4660LC006262">
-        <marka>Honda</marka>
-        <tipus>Jazz</tipus>
+    <auto alvazszam="JH4KA4660LC006262" ugyfelid="1">
+        <marka>Fiat</marka>
+        <tipus>Multipla</tipus>
         <km_ora_allasa>20000</km_ora_allasa>
     </auto>
-    <auto ugyfelid="a2" alvazszam="J8DE5B16477903094">
-        <marka>Fiat</marka>
-        <tipus>Tipo</tipus>
+    <auto alvazszam="J8DE5B16477903094" ugyfelid="2">
+        <marka>Kia</marka>
+        <tipus>Ceed</tipus>
         <km_ora_allasa>98000</km_ora_allasa>
     </auto>
-    <auto ugyfelid="a3" alvazszam="JH4KA2550HC005889">
-        <marka>Bentley</marka>
-        <tipus>Continental</tipus>
-        <km_ora_allasa>110000</km_ora_allasa>
+    <auto alvazszam="JH4KA2550HC005889" ugyfelid="3">
+        <marka>Honda</marka>
+        <tipus>Civic</tipus>
+        <km_ora_allasa>250000</km_ora_allasa>
     </auto>
 
-    <tulajdonos ugyfelid="a1">
-        <nev>Szalai Márton</nev>
-        <cim>Miskolc, Felsőruzsin krt. 34</cim>
-        <szulido>1999.03.18</szulido>
+    <tulajdonos ugyfelid="1">
+        <nev>Kiss Ramóna</nev>
+        <cim>5300 Karcag, Déryné utca 10</cim>
+        <szulido>1999.01.01</szulido>
     </tulajdonos>
-    <tulajdonos ugyfelid="a2">
+    <tulajdonos ugyfelid="2">
         <nev>Tóth Fanni</nev>
         <cim>Kiskunfélegyháza, Napsugár út. 50</cim>
         <szulido>1987.10.10</szulido>
     </tulajdonos>
-    <tulajdonos ugyfelid="a3">
-        <nev>Nagy Béla</nev>
-        <cim>Berettyóújfalu, Kossuth utca. 10</cim>
-        <szulido>1974.01.29</szulido>
+    <tulajdonos ugyfelid="3">
+        <nev>Szep Timea</nev>
+        <cim>3530 Miskolc, Szentgyörgy út 43.</cim>
+        <szulido>1999.04.04</szulido>
     </tulajdonos>
 
-    <futar mid="m1" cikkszam="qwert12">
+    <futar cikkszam="1" mid="1">
         <varhato_erk>15:15</varhato_erk>
     </futar>
-    <futar mid="m2" cikkszam="xfgje55">
+    <futar cikkszam="2" mid="2">
         <varhato_erk>10:00</varhato_erk>
     </futar>
-    <futar mid="m3" cikkszam="lobdy87">
+    <futar cikkszam="3" mid="3">
         <varhato_erk>6:00</varhato_erk>
     </futar>
 

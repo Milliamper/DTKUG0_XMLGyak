@@ -67,28 +67,28 @@
         <xs:sequence>
             <xs:element name="bejegyzett_cegek" type="xs:string"/>
         </xs:sequence>
-        <xs:attribute name="cegid" type="xs:string" use="required"/>
-        <xs:attribute name="cegjegyzekid" type="xs:string" use="required"/>
+        <xs:attribute name="cegid" type="xs:unsignedByte" use="required"/>
+        <xs:attribute name="cegjegyzekid" type="xs:unsignedByte" use="required"/>
     </xs:complexType>
     <xs:complexType name="ceg_type">
         <xs:sequence>
             <xs:element name="nev" type="xs:string"/>
             <xs:element name="szekhely" type="szekhely_type"/>
         </xs:sequence>
-        <xs:attribute name="cegid" type="xs:string" use="required"/>
+        <xs:attribute name="cegid" type="xs:unsignedByte" use="required"/>
     </xs:complexType>
     <xs:complexType name="muhely_type">
         <xs:sequence>
             <xs:element name="javitando_auto" type="javitando_auto_type"/>
         </xs:sequence>
-        <xs:attribute name="cegid" type="xs:string" use="required"/>
-        <xs:attribute name="mid" type="xs:string" use="required"/>
+        <xs:attribute name="cegid" type="xs:unsignedByte" use="required"/>
+        <xs:attribute name="mid" type="xs:unsignedByte" use="required"/>
     </xs:complexType>
     <xs:complexType name="raktar_type">
         <xs:sequence>
             <xs:element name="alkatreszek" type="alkatreszek_type"/>
         </xs:sequence>
-        <xs:attribute name="cikkszam" type="xs:string" use="required"/>
+        <xs:attribute name="cikkszam" type="xs:unsignedByte" use="required"/>
     </xs:complexType>
     <xs:complexType name="auto_type">
         <xs:sequence>
@@ -96,7 +96,7 @@
             <xs:element name="tipus" type="xs:string"/>
             <xs:element name="km_ora_allasa" type="km_ora_allasa_type"/>
         </xs:sequence>
-        <xs:attribute name="ugyfelid" type="xs:string" use="required"/>
+        <xs:attribute name="ugyfelid" type="xs:unsignedByte" use="required"/>
         <xs:attribute name="alvazszam" type="xs:string" use="required"/>
     </xs:complexType>
     <xs:complexType name="tulajdonos_type">
@@ -105,14 +105,14 @@
             <xs:element name="cim" type="xs:string"/>
             <xs:element name="szulido" type="szulido_type"/>
         </xs:sequence>
-        <xs:attribute name="ugyfelid" type="xs:string" use="required"/>
+        <xs:attribute name="ugyfelid" type="xs:unsignedByte" use="required"/>
     </xs:complexType>
     <xs:complexType name="futar_type">
         <xs:sequence>
             <xs:element name="varhato_erk" type="varhato_erk_type"/>
         </xs:sequence>
-        <xs:attribute name="mid" type="xs:string" use="required"/>
-        <xs:attribute name="cikkszam" type="xs:string" use="required"/>
+        <xs:attribute name="mid" type="xs:unsignedByte" use="required"/>
+        <xs:attribute name="cikkszam" type="xs:unsignedByte" use="required"/>
     </xs:complexType>
     <xs:complexType name="szekhely_type">
         <xs:sequence>
