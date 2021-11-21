@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<?xml-stylesheet type='text/xsl' href='studentFB8YPQ.xsl'?>
+
 <class xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <student id="01">
         <keresztnev>Márton</keresztnev>
