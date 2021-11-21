@@ -1,0 +1,53 @@
+<html>
+    <body>
+        <h2>Szalai Marton apple-template</h2>
+         
+      ID: <span style="font-size = 22px;">01</span>
+        <br>
+         
+      Keresztnev: <span style="color:darkred;">Marton</span>
+        <br>
+         
+      Vezeteknev: <span style="color:green;">Szalai</span>
+        <br>
+        <span style="color:black;">Marci</span> 
+      kor: <span style="color:blue;">22</span>
+        <br>
+         
+      Fizetes: <span style="color:red;">600000</span>
+        <br>
+        <br>
+         
+      ID: <span style="font-size = 22px;">02</span>
+        <br>
+         
+      Keresztnev: <span style="color:darkred;">Petra</span>
+        <br>
+         
+      Vezeteknev: <span style="color:green;">Sebak</span>
+        <br>
+        <span style="color:black;">Pepe</span> 
+      kor: <span style="color:blue;">22</span>
+        <br>
+         
+      Fizetes: <span style="color:red;">600000</span>
+        <br>
+        <br>
+         
+      ID: <span style="font-size = 22px;">03</span>
+        <br>
+         
+      Keresztnev: <span style="color:darkred;">Fanni</span>
+        <br>
+         
+      Vezeteknev: <span style="color:green;">Kiss</span>
+        <br>
+        <span style="color:black;">Borso</span> 
+      kor: <span style="color:blue;">19</span>
+        <br>
+         
+      Fizetes: <span style="color:red;">600000</span>
+        <br>
+        <br>
+    </body>
+</html>

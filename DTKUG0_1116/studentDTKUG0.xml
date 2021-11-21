@@ -8,17 +8,20 @@
         <vezeteknev>Szalai</vezeteknev>
         <becenev>Marci</becenev>
         <kor>22</kor>
+        <fizetes>600000</fizetes>
     </student>
     <student id="02">
         <keresztnev>Petra</keresztnev>
         <vezeteknev>Sebák</vezeteknev>
         <becenev>Pepe</becenev>
         <kor>22</kor>
+        <fizetes>600000</fizetes>
     </student>
     <student id="03">
         <keresztnev>Fanni</keresztnev>
         <vezeteknev>Kiss</vezeteknev>
         <becenev>Borsó</becenev>
         <kor>19</kor>
+        <fizetes>600000</fizetes>
     </student>
 </class>
