@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<?xml-stylesheet type='text/xsl' href='orarendDTKUG0.xsl'?>
+
+<orarend>
+	<ora id="a" tipus="elmelet">
+		<targy>Web-es alkalmazasok JAVA</targy>
+		<idopont>Hetfo 10-12</idopont>
+		<helyszin>Info/101</helyszin>
+		<oktato>Dr. Krizsan Zoltan</oktato>
+		<szak>Mernokinformatikus</szak>
+	</ora>
+	
+	<ora id="b" tipus="elmelet">
+		<targy>Web technologiak</targy>
+		<idopont>Hetfo 12-14</idopont>
+		<helyszin>A1/305</helyszin>
+		<oktato>Agardi Anita</oktato>
+		<szak>Mernokinformatikus</szak>
+	</ora>
+	
+	<ora id="c" tipus="elmelet">
+		<targy>Mesterseges intelligencia</targy>
+		<idopont>Hetfo 14-17</idopont>
+		<helyszin>XXXII. eloado</helyszin>
+		<oktato>Dr. Dudas Laszlo</oktato>
+		<szak>Mernokinformatikus</szak>
+	</ora>
+	
+	<ora id="d" tipus="gyakorlat">
+		<targy>Web-es alkalmazasok JAVA</targy>
+		<idopont>Kedd 10-12</idopont>
+		<helyszin>Info/101</helyszin>
+		<oktato>Dr. Krizsan Zoltan</oktato>
+		<szak>Mernokinformatikus</szak>
+	</ora>
+	
+	<ora id="e" tipus="elmelet">
+		<targy>Adatkezeles XML-ben</targy>
+		<idopont>Kedd 12-14</idopont>
+		<helyszin>I. eloado</helyszin>
+		<oktato>Dr. Bednarik Laszlo</oktato>
+		<szak>Mernokinformatikus</szak>
+	</ora>
+	
+	<ora id="f" tipus="gyakorlat">
+		<targy>Adatkezeles XML-ben</targy>
+		<idopont>Kedd 14-16</idopont>
+		<helyszin>Info/103</helyszin>
+		<oktato>Dr. Bednarik Laszlo</oktato>
+		<szak>Mernokinformatikus</szak>
+	</ora>
+	
+	<ora id="g" tipus="gyakorlat">
+		<targy>Web technologiak</targy>
+		<idopont>Kedd 16-18</idopont>
+		<helyszin>Info/101</helyszin>
+		<oktato>Agardi Anita</oktato>
+		<szak>Mernokinformatikus</szak>
+	</ora>
+	
+	<ora id="h" tipus="elmelet">
+		<targy>Szoftverteszteles</targy>
+		<idopont>Szerda 8-10</idopont>
+		<helyszin>Info/103</helyszin>
+		<oktato>Kunne Tamas Judit</oktato>
+		<szak>Mernokinformatikus</szak>
+	</ora>
+	
+	<ora id="i" tipus="gyakorlat">
+		<targy>Szoftverteszteles</targy>
+		<idopont>Szerda 10-12</idopont>
+		<helyszin>Info/103</helyszin>
+		<oktato>Tompa Tamas</oktato>
+		<szak>Mernokinformatikus</szak>
+	</ora>
+	
+	<ora id="j" tipus="elmelet">
+		<targy>Mesterseges intelligencia</targy>
+		<idopont>Szerda 13-14</idopont>
+		<helyszin>Info/15</helyszin>
+		<oktato>Dr. Dudas Laszlo</oktato>
+		<szak>Mernokinformatikus</szak>
+	</ora>
+
+	<ora id="k" tipus="elmelet">
+		<targy>Integralt vallalati rendszerek</targy>
+		<idopont>Szerda 14-16</idopont>
+		<helyszin>A1/14</helyszin>
+		<oktato>Dr. Samad Dadvandipour</oktato>
+		<szak>Mernokinformatikus</szak>
+	</ora>
+
+	<ora id="l" tipus="gyakorlat">
+		<targy>Integralt vallalati rendszerek</targy>
+		<idopont>Szerda 16-18</idopont>
+		<helyszin>Info/15</helyszin>
+		<oktato>Dr. Kulcsarne Forrai Moni</oktato>
+		<szak>Mernokinformatikus</szak>
+	</ora>
+		
+	
+	
+</orarend>
