@@ -18,21 +18,21 @@ public class DOMReadDTKUG0 {
 	public static void main(String[] args) {
 
 		try {
-			
+
 			// XML fajl bekerese
 			File xmlFile = new File("XMLdtkug0.xml");
-			
+
 			// Objektumfak eloallitasa a dokumentumbol
-			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance(); 
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = factory.newDocumentBuilder();
 
 			// XML dokumentum atadasa es egy DOM Document objektum letrehozasa
-			Document doc = dBuilder.parse(xmlFile); 
-			
+			Document doc = dBuilder.parse(xmlFile);
+
 			// szomszedos es ures text node-ok eltavolitasara szolgal
 			doc.getDocumentElement().normalize();
-			
-			Read(doc);
+
+			ReadFutar(doc);
 			ReadCegjegyzek(doc);
 			ReadAuto(doc);
 		} catch (ParserConfigurationException pce) {
@@ -44,15 +44,17 @@ public class DOMReadDTKUG0 {
 		}
 	}
 
+	// a fa struktura lehetove teszi hogy id alapjan kerdezzunk le
+	// a legtobb objektum rendelkezik leszarmazottal
 	public static void ReadCegjegyzek(Document doc) {
 
 		// cegjegyzek tag-el rendelkezo elemek lekerese
-		NodeList nList = doc.getElementsByTagName("cegjegyzek"); 
+		NodeList nList = doc.getElementsByTagName("cegjegyzek");
 
 		for (int i = 0; i < nList.getLength(); i++) {
 			Node node = nList.item(i); // lista aktualis elemeinek lekerese
 			Element element = (Element) node; // konvertalas elementekke
-			// attributomok lekérése majd a definiált metódusok meghívása
+			// attributomok lekerese majd a definialt metodusok meghivasa
 			if (node.getNodeType() == Node.ELEMENT_NODE) {
 				String cegid = element.getAttribute("cegid");
 				String cegjegyzekid = element.getAttribute("cegjegyzekid");
@@ -73,7 +75,7 @@ public class DOMReadDTKUG0 {
 	public static void ReadCegById(Document doc, String id) {
 		// ceg tag-el rendelkezo elemek lekerese
 		NodeList nList = doc.getElementsByTagName("ceg");
-		
+
 		for (int i = 0; i < nList.getLength(); i++) {
 			Node node = nList.item(i); // lista aktualis elemeinek lekerese
 			Element element = (Element) node; // konvertalas elementekke
@@ -98,10 +100,10 @@ public class DOMReadDTKUG0 {
 	}
 
 	public static void ReadMuhelyById(Document doc, String id) {
-		
+
 		// muhely tag-el rendelkezo elemek lekerese
 		NodeList nList = doc.getElementsByTagName("muhely");
-		
+
 		for (int i = 0; i < nList.getLength(); i++) {
 			Node node = nList.item(i); // lista aktualis elemeinek lekerese
 			Element element = (Element) node; // konvertalas elementekke
@@ -127,10 +129,10 @@ public class DOMReadDTKUG0 {
 	}
 
 	public static void ReadMuhelyByIdWithoutCeg(Document doc, String id) {
-		
+
 		// muhely tag-el rendelkezo elemek lekerese, a ceg olvasasa nelkul
 		NodeList nList = doc.getElementsByTagName("muhely");
-		
+
 		for (int i = 0; i < nList.getLength(); i++) {
 			Node node = nList.item(i); // lista aktualis elemeinek lekerese
 			Element element = (Element) node; // konvertalas elementekke
@@ -154,13 +156,13 @@ public class DOMReadDTKUG0 {
 	}
 
 	public static void ReadRaktarById(Document doc, String id) {
-		
+
 		// raktar tag-el rendelkezo elemek lekerese
 		NodeList nList = doc.getElementsByTagName("raktar");
-		
+
 		for (int i = 0; i < nList.getLength(); i++) {
 			Node node = nList.item(i); // lista aktualis elemeinek lekerese
-			Element element = (Element) node; //konvertalas elementekke
+			Element element = (Element) node; // konvertalas elementekke
 
 			if (node.getNodeType() == Node.ELEMENT_NODE) {
 				if (element.getAttribute("cikkszam").equals(id)) {
@@ -179,10 +181,10 @@ public class DOMReadDTKUG0 {
 	}
 
 	public static void ReadAuto(Document doc) {
-		
+
 		// auto tag-el rendelkezo elemek lekerese
 		NodeList nList = doc.getElementsByTagName("auto");
-		
+
 		for (int i = 0; i < nList.getLength(); i++) {
 			Node node = nList.item(i); // lista aktualis elemeinek lekerese
 			Element element = (Element) node; // konvertalas elementekke
@@ -211,10 +213,10 @@ public class DOMReadDTKUG0 {
 	}
 
 	public static void ReadAutoWithoutTulajdonos(Document doc) {
-		
+
 		// auto tag-el rendelkezo elemek lekerese, tulajdonos nelkul
-		NodeList nList = doc.getElementsByTagName("auto"); 
-		
+		NodeList nList = doc.getElementsByTagName("auto");
+
 		for (int i = 0; i < nList.getLength(); i++) {
 			Node node = nList.item(i); // lista aktualis elemeinek lekerese
 			Element element = (Element) node; // konvertalas elementekke
@@ -227,7 +229,7 @@ public class DOMReadDTKUG0 {
 				String tipus = element.getElementsByTagName("tipus").item(0).getTextContent();
 				String km = element.getElementsByTagName("km_ora_allasa").item(0).getTextContent();
 
-				System.out.println(i + 1 + ". aut� : ");
+				System.out.println(i + 1 + ". auto : ");
 				System.out.println("\nRoot Element :" + doc.getDocumentElement().getNodeName());
 				System.out.println("------");
 				System.out.println("Current Element :" + node.getNodeName());
@@ -242,10 +244,10 @@ public class DOMReadDTKUG0 {
 	}
 
 	public static void ReadTulajdonosById(Document doc, String id) {
-		
+
 		// tulajdonos tag-el rendelkezo elemek lekerese
-		NodeList nList = doc.getElementsByTagName("tulajdonos"); 
-		
+		NodeList nList = doc.getElementsByTagName("tulajdonos");
+
 		for (int i = 0; i < nList.getLength(); i++) {
 			Node node = nList.item(i); // lista aktualis elemeinek lekerese
 			Element element = (Element) node; // konvertalas elementekke
@@ -270,11 +272,11 @@ public class DOMReadDTKUG0 {
 		}
 	}
 
-	public static void Read(Document doc) {
-		
+	public static void ReadFutar(Document doc) {
+
 		// futar tag-el rendelkezo elemek lekerese
 		NodeList nList = doc.getElementsByTagName("futar");
-		
+
 		for (int i = 0; i < nList.getLength(); i++) {
 			Node node = nList.item(i); // lista aktualis elemeinek lekerese
 			Element element = (Element) node; // konvertalas elementekke
@@ -300,4 +302,3 @@ public class DOMReadDTKUG0 {
 	}
 
 }
-

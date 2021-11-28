@@ -31,9 +31,10 @@ public class DOMQueryDTKUG0 {
 		System.out.println("_____________________________");
 		System.out.println("Cegjegyzek listazasa: ");
 		LoadCegjegyzekQuery(doc);
-
 	}
 
+	// van ertekellenorzes, vagyis ha rossz szamot adunk meg, vagy esetleg nem
+	// szamot, akkor hibat kapunk
 	private static int readCegSorszam() {
 		Scanner input = new Scanner(System.in);
 		int cegSorszam;
@@ -59,7 +60,6 @@ public class DOMQueryDTKUG0 {
 			String bejegyzettCeg = element.getElementsByTagName("bejegyzett_cegek").item(0).getTextContent();
 			System.out.println((i + 1) + ". ceg: " + bejegyzettCeg);
 			countCegekSzama++;
-
 		}
 		// Ceg kivalasztasa, sorszam ellenorzott beolvasasa
 		ceg = readCegSorszam();
@@ -90,7 +90,6 @@ public class DOMQueryDTKUG0 {
 				break;
 			}
 		}
-
 	}
 
 	// Kivalasztott ceg adatai
@@ -106,11 +105,8 @@ public class DOMQueryDTKUG0 {
 				if (id.equals(cegid)) {
 					System.out.println("\nA valasztott ceg adatai: ");
 					DOMReadDTKUG0.ReadCegById(doc, id);
-
 				}
 			}
 		}
-
 	}
-
 }

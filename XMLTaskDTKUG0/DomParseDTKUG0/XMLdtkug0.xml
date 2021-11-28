@@ -49,13 +49,13 @@
         <alkatreszek>ECU</alkatreszek>
     </raktar>
     <raktar cikkszam="3">
-        <alkatreszek>Termosztat</alkatreszek>
+        <alkatreszek>Motorolaj</alkatreszek>
     </raktar>
 
     <auto alvazszam="JH4KA4660LC006262" ugyfelid="1">
-        <marka>Fiat</marka>
-        <tipus>Multipla</tipus>
-        <km_ora_allasa>20000</km_ora_allasa>
+        <marka>Opel</marka>
+        <tipus>Corsa</tipus>
+        <km_ora_allasa>250000</km_ora_allasa>
     </auto>
     <auto alvazszam="J8DE5B16477903094" ugyfelid="2">
         <marka>Kia</marka>
@@ -79,9 +79,9 @@
         <szulido>1987.10.10</szulido>
     </tulajdonos>
     <tulajdonos ugyfelid="3">
-        <nev>Szep Timea</nev>
-        <cim>3530 Miskolc, Szentgyörgy út 43.</cim>
-        <szulido>1999.04.04</szulido>
+        <nev>Kiss Tamás</nev>
+        <cim>3434 Malyi, Rakoczi ut 14.</cim>
+        <szulido>1999.01.01</szulido>
     </tulajdonos>
 
     <futar cikkszam="1" mid="1">

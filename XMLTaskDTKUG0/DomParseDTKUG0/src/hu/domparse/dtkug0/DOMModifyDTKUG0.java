@@ -38,10 +38,14 @@ public class DOMModifyDTKUG0 {
 	}
 
 	public static void ModifyXML(Document doc) throws TransformerException {
+		// Transformer objektumot hozunk letre amely lehetove teszi a dokumentum
+		// modositasat
 		TransformerFactory transformerFactory = TransformerFactory.newInstance();
+		// letrehoz egy masolatot a source-bol a result-ba
 		Transformer transformer = transformerFactory.newTransformer();
 		DOMSource source = new DOMSource(doc);
 		StreamResult result = new StreamResult(new File("XMLdtkug0.xml"));
+		// letrehoz egy masolatot a source-bol a result-ba
 		transformer.transform(source, result);
 	}
 
@@ -75,7 +79,6 @@ public class DOMModifyDTKUG0 {
 		System.out.print("\nAdja meg az ID-t :");
 		String id = scanner.nextLine();
 		return id;
-
 	}
 
 	private static void ModifyMuhely(Document doc, int muhelyekszama) throws TransformerException {
