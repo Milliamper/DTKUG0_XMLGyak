@@ -1,0 +1,32 @@
+<html>
+	<body>
+		<h2>Autok arai novekvo sorrendben</h2>
+		<table border="1">
+			<tr bgcolor="#9acd32">
+				<th style="text-align:left">Auto</th>
+				<th style="text-align:left">Rendszam</th>
+				<th style="text-align:left">Ar</th>
+			</tr>
+			<tr>
+				<td>Fiat</td>
+				<td>ABC-100</td>
+				<td>21233</td>
+			</tr>
+			<tr>
+				<td>Opel</td>
+				<td>ABC-103</td>
+				<td>21233</td>
+			</tr>
+			<tr>
+				<td>Opel</td>
+				<td>ABC-102</td>
+				<td>31233</td>
+			</tr>
+			<tr>
+				<td>Skoda</td>
+				<td>ABC-101</td>
+				<td>44233</td>
+			</tr>
+		</table>
+	</body>
+</html>
