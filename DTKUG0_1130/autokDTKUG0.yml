@@ -1,0 +1,30 @@
+autok:
+    auto:
+        - 
+            tipus: Fiat
+            ar: 21233
+            szin: piros
+            tulaj:
+                nev: Zoli
+                varos: Eger
+        - 
+            tipus: Skoda
+            ar: 44233
+            szin: piros
+            tulaj:
+                nev: Peti
+                varos: Miskolc
+        - 
+            tipus: Opel
+            ar: 31233
+            szin: szürke
+            tulaj:
+                nev: Tomi
+                varos: Miskolc
+        - 
+            tipus: Opel
+            ar: 21233
+            szin: kék
+            tulaj:
+                nev: Sanyi
+                varos: Eger
