@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?
+<?xml version="1.0" encoding="utf-8"?>
 
 <mozi>
 	<konferencia id="nsx_nxm_2jb" cim="Az autózás jövője">
@@ -6,6 +6,7 @@
 			<nev>Bazsó Gábor</nev>
 			<adoszam>394875923875</adoszam>
 			<cim>5300 Karcag,Tokes ut 25.</cim>
+		</eloado>
 		<helyszin id="yas_4xm_2jb" nev="MOM kulturalis kozpont"/>
 		<datum id="jsl_4xm_2jb" idopont="2021.09.23 18:00"/>
 		<hallgatok id="rds_4xm_2jb">
@@ -21,6 +22,7 @@
 				<nev>Tóth Árpád </nev>
 				<lakcim>4150 Püspökladány, Kossuth utca 47</lakcim>
 			</hallgato>
+		</hallgatok>
 	</konferencia>
 	
 	
