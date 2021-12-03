@@ -32,7 +32,6 @@ public class DOMReadDTKUG0 {
 			// szomszedos es ures text node-ok eltavolitasara szolgal
 			doc.getDocumentElement().normalize();
 
-			ReadFutar(doc);
 			ReadCegjegyzek(doc);
 			ReadAuto(doc);
 		} catch (ParserConfigurationException pce) {
@@ -68,6 +67,7 @@ public class DOMReadDTKUG0 {
 				System.out.println("Cegjegyzek ID : " + cegjegyzekid);
 				System.out.println("Bejegyzett cegek - " + (i + 1) + ".ceg: " + bejegyzettCegek);
 
+				ReadCegById(doc, cegid);
 			}
 		}
 	}
@@ -94,6 +94,35 @@ public class DOMReadDTKUG0 {
 					System.out.println("Cegnev : " + nev);
 					System.out.println("Szekhely : " + cim + "\nTelefonszam: " + tel);
 
+					ReadMuhelyById(doc, cegid);
+				}
+			}
+		}
+	}
+
+	// Erre a metodusra azert van szukseg, hogy amikor a DOMQuery osztaly meghivja a
+	// ReadCeg-et, akkor csak a ceg adatai jelenjenek meg
+	public static void ReadCegByIdWithoutMuhely(Document doc, String id) {
+		// ceg tag-el rendelkezo elemek lekerese
+		NodeList nList = doc.getElementsByTagName("ceg");
+
+		for (int i = 0; i < nList.getLength(); i++) {
+			Node node = nList.item(i); // lista aktualis elemeinek lekerese
+			Element element = (Element) node; // konvertalas elementekke
+
+			if (node.getNodeType() == Node.ELEMENT_NODE) {
+				if (element.getAttribute("cegid").equals(id)) {
+					String cegid = element.getAttribute("cegid");
+					String nev = element.getElementsByTagName("nev").item(0).getTextContent();
+					String cim = element.getElementsByTagName("cim").item(0).getTextContent();
+					String tel = element.getElementsByTagName("telefonszam").item(0).getTextContent();
+
+					System.out.println("\nRoot Element :" + doc.getDocumentElement().getNodeName());
+					System.out.println("------");
+					System.out.println("Current Element :" + node.getNodeName());
+					System.out.println("Ceg azonosito : " + cegid);
+					System.out.println("Cegnev : " + nev);
+					System.out.println("Szekhely : " + cim + "\nTelefonszam: " + tel);
 				}
 			}
 		}
@@ -121,13 +150,14 @@ public class DOMReadDTKUG0 {
 					System.out.println("MuhelyID : " + mid);
 					System.out.println("Javitando auto : " + javitandoAuto);
 
-					ReadCegById(doc, cegid);
-
+					ReadFutarById(doc, mid);
 				}
 			}
 		}
 	}
 
+	// Ezt a metodust a DomModify hasznalja. Azert van ra szukseg, hogy CSAK a
+	// muhely adatait listazzuk a modositashoz
 	public static void ReadMuhelyByIdWithoutCeg(Document doc, String id) {
 
 		// muhely tag-el rendelkezo elemek lekerese, a ceg olvasasa nelkul
@@ -149,7 +179,35 @@ public class DOMReadDTKUG0 {
 					System.out.println("Ceg azonosito : " + cegid);
 					System.out.println("MuhelyID : " + mid);
 					System.out.println("Javitando auto : " + javitandoAuto);
+				}
+			}
+		}
+	}
 
+	public static void ReadFutarById(Document doc, String id) {
+
+		// futar tag-el rendelkezo elemek lekerese
+		NodeList nList = doc.getElementsByTagName("futar");
+
+		for (int i = 0; i < nList.getLength(); i++) {
+			Node node = nList.item(i); // lista aktualis elemeinek lekerese
+			Element element = (Element) node; // konvertalas elementekke
+
+			if (node.getNodeType() == Node.ELEMENT_NODE) {
+				if (element.getAttribute("mid").equals(id)) {
+
+					String mid = element.getAttribute("mid");
+					String cikkszam = element.getAttribute("cikkszam");
+					String varhatoErkezes = element.getElementsByTagName("varhato_erk").item(0).getTextContent();
+
+					System.out.println("\nRoot Element :" + doc.getDocumentElement().getNodeName());
+					System.out.println("------");
+					System.out.println("Current Element :" + node.getNodeName());
+					System.out.println("Cikkszam : " + cikkszam);
+					System.out.println("MuhelyID : " + mid);
+					System.out.println("Varhato erkezes : " + varhatoErkezes);
+
+					ReadRaktarById(doc, cikkszam);
 				}
 			}
 		}
@@ -174,7 +232,6 @@ public class DOMReadDTKUG0 {
 					System.out.println("Current Element :" + node.getNodeName());
 					System.out.println("Cikkszam : " + cikkszam);
 					System.out.println("Alkatresz : " + alkatreszek);
-
 				}
 			}
 		}
@@ -207,11 +264,12 @@ public class DOMReadDTKUG0 {
 				System.out.println("Km ora allasa : " + km);
 
 				ReadTulajdonosById(doc, ugyfelid);
-
 			}
 		}
 	}
 
+	// Ezt a metodust a DomModify hasznalja. Azert van ra szukseg, hogy CSAK az
+	// auto adatait listazzuk a modositashoz
 	public static void ReadAutoWithoutTulajdonos(Document doc) {
 
 		// auto tag-el rendelkezo elemek lekerese, tulajdonos nelkul
@@ -240,7 +298,6 @@ public class DOMReadDTKUG0 {
 				System.out.println("Km ora allasa : " + km);
 			}
 		}
-
 	}
 
 	public static void ReadTulajdonosById(Document doc, String id) {
@@ -266,39 +323,8 @@ public class DOMReadDTKUG0 {
 					System.out.println("Nev : " + nev);
 					System.out.println("Cim : " + cim);
 					System.out.println("Szuletesi ido : " + szulido);
-
 				}
 			}
 		}
 	}
-
-	public static void ReadFutar(Document doc) {
-
-		// futar tag-el rendelkezo elemek lekerese
-		NodeList nList = doc.getElementsByTagName("futar");
-
-		for (int i = 0; i < nList.getLength(); i++) {
-			Node node = nList.item(i); // lista aktualis elemeinek lekerese
-			Element element = (Element) node; // konvertalas elementekke
-
-			if (node.getNodeType() == Node.ELEMENT_NODE) {
-
-				String mid = element.getAttribute("mid");
-				String cikkszam = element.getAttribute("cikkszam");
-				String varhatoErkezes = element.getElementsByTagName("varhato_erk").item(0).getTextContent();
-
-				System.out.println("\nRoot Element :" + doc.getDocumentElement().getNodeName());
-				System.out.println("------");
-				System.out.println("Current Element :" + node.getNodeName());
-				System.out.println("Cikkszam : " + cikkszam);
-				System.out.println("MuhelyID : " + mid);
-				System.out.println("Varhato erkezes : " + varhatoErkezes);
-
-				ReadRaktarById(doc, cikkszam);
-				ReadMuhelyById(doc, mid);
-
-			}
-		}
-	}
-
 }

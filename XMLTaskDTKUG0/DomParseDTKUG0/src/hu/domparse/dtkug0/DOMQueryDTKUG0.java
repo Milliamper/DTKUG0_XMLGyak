@@ -104,7 +104,7 @@ public class DOMQueryDTKUG0 {
 
 				if (id.equals(cegid)) {
 					System.out.println("\nA valasztott ceg adatai: ");
-					DOMReadDTKUG0.ReadCegById(doc, id);
+					DOMReadDTKUG0.ReadCegByIdWithoutMuhely(doc, id);
 				}
 			}
 		}
