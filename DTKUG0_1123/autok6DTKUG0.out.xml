@@ -1,0 +1,17 @@
+<!DOCTYPE HTML><html lang="hu">
+   <h2>Varosonkent az autok osszara es darabszama</h2>
+   <ul>
+      <li>Eger
+         <ul>
+            <li>1 db auto</li>
+            <li>Atlagar: 21233</li>
+         </ul>
+      </li>
+      <li>Miskolc
+         <ul>
+            <li>3 db auto</li>
+            <li>Atlagar: 32233</li>
+         </ul>
+      </li>
+   </ul>
+</html>
